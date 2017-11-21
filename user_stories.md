@@ -8,9 +8,9 @@ As a member of the marketing team, I want the photos that are displayed to be re
 
 As a member of the marketing team, I want the site to relay accurate information regarding the participants choices.
 
-As a member of the marketing team, I want the site 
+As a member of the marketing team, I want the site to be well designed.
 
-As a member of the marketing team, I want
+As a member of the marketing team, I want the site to keep track of the more popular images.
 
 #### Developer
 

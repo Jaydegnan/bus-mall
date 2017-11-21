@@ -1,6 +1,6 @@
 'use strict';
 
-var allProducts = [];
+var allProducts = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'logo', 'pen', 'pet-sweep', 'scissors', 'shark', 'sweep', 'sweepers', 'tauntaun', 'unicorn', 'usb', ''];
 var productNames = ['boots', 'chair', 'scissors']; // TODO: see the pattern here, and what you need to fill in?
 
 function Product(name, path) {
@@ -35,7 +35,7 @@ var productRank = {
 
   onClick: function() {
     // TODO: Hmm... what's going to happen here?
-};
+}
 
 productRank.imageEls.addEventListener('click', productRank.onClick);
 productRank.displayImages();
