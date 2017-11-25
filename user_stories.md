@@ -7,7 +7,7 @@ As a member of the marketing team, I want the photo options to be clear and easy
 As a member of the marketing team, I want the photos that are displayed to be relevant to the Bus Mall brand.
 
 As a member of the marketing team, I want the site to relay accurate information regarding the participants choices.
-
+ 
 As a member of the marketing team, I want the site to be well designed.
 
 As a member of the marketing team, I want the site to keep track of the more popular images.
