@@ -3,3 +3,8 @@
   max-height: 400px;
   margin-left: 25px;
 }
+
+#myChart {
+  width: 400px;
+  height: 250px;
+}
