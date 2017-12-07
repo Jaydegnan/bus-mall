@@ -4,20 +4,25 @@
 var allProducts = [];
 var productNames = ['bag', 'banana', 'bathroom', 'boots', 'breakfast', 'bubblegum', 'chair', 'cthulhu', 'dog-duck', 'dragon', 'pen', 'pet-sweep', 'scissors', 'shark', 'tauntaun', 'unicorn', 'water-can', 'wine-glass'];
 
-function Product(name) { // constructor function
+function Product(name, votes) { // constructor function
   this.name = name;
   this.path = 'assets/' + this.name + '.jpg';
-  this.votes = 0;
+  this.votes = votes;
   // this.timesShown = 0;
   allProducts.push(this); // once object is constructed, adds to array allProducts
 }
-
-(function() { // iffe (immediately invoked function expression, that's why parenthesis are in front)
-  for(var i in productNames) { // for every item in product names, create a new product
-    new Product(productNames[i]); // 'new' is a requirement to CALL a constructor
+if (localStorage.getItem('allProducts') === null) {
+  (function() { // iffe (immediately invoked function expression, that's why parenthesis are in front)
+    for(var i in productNames) { // for every item in product names, create a new product
+      new Product(productNames[i], 0); // 'new' is a requirement to CALL a constructor
+    }
+  })();
+} else {
+  var newAllProducts = JSON.parse(localStorage.getItem('allProducts'));
+  for (var i = 0; i < newAllProducts.length; i++) {
+    new Product(newAllProducts[i].name, newAllProducts[i].votes);
   }
-})();
-
+}
 
 var tracker = { // object literal
   imagesEl: document.getElementById('images'), // get the node in the HTML file with id 'images'
@@ -62,6 +67,10 @@ var tracker = { // object literal
     this.imagesEl.appendChild(this.imageThree);
   },
 
+  toLocalStorage: function() {
+    localStorage.setItem('allProducts', JSON.stringify(allProducts));
+  },
+
   onClick: function(event) { // this function is going to happen only if one if the pictures is clicked
     console.log(event.target.id); // console log's the click, tells you what the ID is of the thing that was clicked
 
@@ -83,6 +92,7 @@ var tracker = { // object literal
         tracker.removeEventListener();
         // tracker.clickerResults(); // calls function that prints out results
         tracker.chartTotals();
+        tracker.toLocalStorage();
         tracker.resetButton(); // function resets the webpage
       }
     }
