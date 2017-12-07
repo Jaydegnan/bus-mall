@@ -2,4 +2,10 @@
   width: 300px;
   max-height: 400px;
   margin-left: 25px;
+  padding: 12px 20px;
+}
+
+#myChart {
+  width: 400px;
+  height: 250px;
 }
